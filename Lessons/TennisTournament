@@ -1,1 +1,20 @@
+/*
+Attempt 1: 100%
+A lot easier than I was expecting considering the difficulty of the majority of questions on Codility.
+Literally something an elementary schooler could probably do.
+*/
 
+class Solution {
+    public int solution(int P, int C) {
+        // Implement your solution here
+        if(C * 2 <= P) {
+            return C;
+        }
+        //else: C * 2 > P
+        int groups = P/2;
+        if(C >= groups) {
+            return groups;
+        }
+        return -1;
+    }
+}
