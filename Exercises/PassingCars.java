@@ -21,11 +21,11 @@ class Solution {
         for(int i = 0; i < A.length ; i++) {
             if(A[i] == 0) {
                 increment++;
-            } else {
+            } else { //the problem says it can only have 0s or 1s
                 total += increment;
             }
         }
-        if(total > 1000000000) {
+        if(total > 1000000000) { //yeah this is a billion
             return -1;
         }
         return total;
