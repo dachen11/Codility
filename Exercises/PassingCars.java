@@ -1,4 +1,36 @@
 /*
+Attempt 2: 100%
+The issue with the performance error was that total overflowed which is why the alg returned negative 1 billion something instead of negative 1
+Changes:
+moved the "check total > 1 billion" into the for loop
+Put an extra if statement to make sure that total isn't less than 0 (just in case)
+
+*/
+
+class Solution {
+    public int solution(int[] A) {
+        // Implement your solution here
+        int increment = 0;
+        int total = 0;
+        for(int i = 0; i < A.length ; i++) {
+            if(A[i] == 0) {
+                increment++;
+            } else { //the problem says it can only have 0s or 1s
+                total += increment;
+                if(total > 1000000000) { //yeah this is a billion
+                    return -1;
+                }
+            }
+        }
+        if(total < 0) {
+            return -1;
+        }
+        return total;
+    }
+}
+
+
+/*
 Attempt 1: 90%. 100% correct but 80% performance
 
 Thought process:
