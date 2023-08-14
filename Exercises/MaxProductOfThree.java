@@ -1,5 +1,6 @@
 /*
 Attempt 2 because Attempt 1 was just so bad: 44%
+Attempt 3 bumped up to 55%
 
 forgot about edgecases like 3 negative numbers
 */
@@ -7,14 +8,14 @@ forgot about edgecases like 3 negative numbers
 class Solution {
     public int solution(int[] A) {
         // Implement your solution here
-        if(A.length == 3) { //added on from attempt 3, bumped up to 55%
+        if(A.length == 3) { 
             return A[0] * A[1] * A[2];
         }
-        int pos1 = 1;
-        int pos2 = 1;
-        int pos3 = 1;
-        int neg1 = 1; //added on from attempt 4
-        int neg2 = 1;
+        int pos1 = 0; 
+        int pos2 = 0;
+        int pos3 = 0;
+        int neg1 = 0;
+        int neg2 = 0;
 
         for(int i = 0; i < A.length; i++) {
             if(A[i] > pos1) {
@@ -25,7 +26,7 @@ class Solution {
                 pos3 = pos2;
                 pos2 = A[i];
             } else if(A[i] > pos3) {
-                pos3 = pos2;
+                pos3 = A[i];
             }
 
             if(A[i] < neg1) {
